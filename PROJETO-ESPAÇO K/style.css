@@ -3,11 +3,11 @@ body {
             padding: 0;
         }
         .logo-container {
-            background-color: #d8f3ff;
+            background: linear-gradient(135deg, #ffffff 0%, #d8f3ff 100%);
             border-radius: 6px;
         }
         .logo-img {
-            width: 200px;
+            width: 100px;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -22,13 +22,13 @@ body {
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
-            font-size: 25px;
+            font-size: 20px;
             margin-right: 10%;
         }
         .nav-logo {
-            height: 48px;
+            height: 65px;
             width: auto;
-            margin-right: 1em;
+            margin-left: 6em;
             order: 0;
         }
         nav ul {
@@ -88,3 +88,83 @@ body {
         #next {
             right: 16px;
         }
+
+        /* style.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f7fafc;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-wrapper {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-card {
+  max-width: 28rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f3f4f6;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 93%;
+  padding: 0.5rem 1rem;
+  background-color: #e5e7eb;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 2px #d8f3ff;
+}
+
+button {
+  width: 100%;
+  background-color: #d8f3ff;
+  color: #1f2937;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #8fddff;
+}

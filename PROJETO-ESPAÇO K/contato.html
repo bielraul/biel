@@ -8,13 +8,13 @@
     <title>Espaço K</title>
 </head>
 <body>
-    <div style="background-color: #d8f3ff;  border-radius: 6px;">
-        <img src="imagens/logo-png.png" alt="Logo do Espaço K" style="width: 200px; height: auto; display: block; margin: 0 auto;">
+    <div class="logo-container">
+        <img class="logo-img" src="imagens/logo-png.png" alt="Logo do Espaço K">
     </div>
 
     <nav>
         <div class="nav-container">
-            <img class="nav-logo" src="imagens/image-removebg-preview.png" alt="Logo Espaço K" style="width: 90px; height: auto; margin-left: 20%;">
+            <img class="nav-logo" src="imagens/logo-png.png" alt="Logo Espaço K">
             <ul>
                 <li><a href="index.html">Index</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
@@ -31,13 +31,32 @@
         <button id="next" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); background:#222; color:#fff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:24px;">&#10095;</button>
     </div>
 
-<h1>Contato</h1>
-<p>Entre em contato para agendar sua visita ou solicitar um orçamento:</p>
-<ul>
-    <li>Email: contato@espacok.com.br</li>
-    <li>Telefone: (11) 99999-9999</li>
-    <li>Endereço: Rua das Festas, 123 - São Paulo, SP</li>
-</ul>
+
+    <!-- contact.html -->
+
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="form-card">
+        <h2>Contato</h2><br>
+        <form>
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input placeholder="Digite seu nome" type="text" id="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input placeholder="Digite seu email" type="email" id="email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea placeholder="Digite sua mensagem" rows="6" id="message" name="message" style="resize: none;"></textarea>
+          </div><br>
+          
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 <script>
@@ -57,5 +76,12 @@
         img.src = images[current];
     };
 </script>
+
+<footer>
+    <div class="footer-container" style="background-color: #222; color: #fff; padding: 1px 0; text-align: center; margin-top: 40px;">
+        <p style="font-size: 1.1em; margin: 0;">&copy; 2024 Espaço K. Todos os direitos reservados.</p>
+        <p style="margin: 8px 0 0 0;">Contato: <a href="mailto:contato@espacok.com.br" style="color: #001aff; text-decoration: underline;">contato@espacok.com.br</a></p>
+    </div>
+</footer>
 </body>
 </html>
