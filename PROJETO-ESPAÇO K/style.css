@@ -1,7 +1,22 @@
+.convergence-regular {
+  font-family: "Convergence", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.concert-one-regular {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body {
+            background: linear-gradient(135deg, #ffffff 0%, #d8f3ff 100%);
             margin: 0;
             padding: 0;
         }
+
         .logo-container {
             background: linear-gradient(135deg, #ffffff 0%, #d8f3ff 100%);
             border-radius: 6px;
@@ -24,9 +39,11 @@ body {
             margin: 0 auto;
             font-size: 20px;
             margin-right: 10%;
+  font-family: "Convergence", sans-serif;
+
         }
         .nav-logo {
-            height: 65px;
+            height: 95px;
             width: auto;
             margin-left: 6em;
             order: 0;
