@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Espaço K</title>
+</head>
+<body>
+    <div style="background-color: #d8f3ff;  border-radius: 6px;">
+        <img src="imagens/logo-png.png" alt="Logo do Espaço K" style="width: 200px; height: auto; display: block; margin: 0 auto;">
+    </div>
+
+    <nav>
+        <style>
+            nav {
+                background: #222;
+                padding: 0.8em 0;
+            }
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 2em;
+            }
+            nav li {
+                display: inline;
+            }
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: bold;
+                padding: 0.5em 1em;
+                border-radius: 4px;
+                transition: background 0.2s;
+            }
+            nav a:hover {
+                background: #d8f3ff;
+                color: black;
+            }
+        </style>
+        <ul>
+            <li><a href="index.html">Index</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Carrossel de Imagens -->
+<div id="carousel" style="width:100vw; max-width:900px; margin: auto; position:relative;">
+    <img id="carousel-img" src="imagens/carrossel1.jpeg" alt="Foto Espaço K" style="width:100vw; max-width:900px; height:auto; display:block;">
+    <button id="prev" style="position:absolute; top:50%; left:16px; transform:translateY(-50%); background:#222; color:#fff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:24px;">&#10094;</button>
+    <button id="next" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); background:#222; color:#fff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:24px;">&#10095;</button>
+</div>
+
+<h2>Contato</h2>
+<p>Entre em contato para agendar sua visita ou solicitar um orçamento:</p>
+<ul>
+    <li>Email: contato@espacok.com.br</li>
+    <li>Telefone: (11) 99999-9999</li>
+    <li>Endereço: Rua das Festas, 123 - São Paulo, SP</li>
+</ul>
+
+
+<script>
+    const images = [
+        "imagens/carrossel1.jpeg",
+        "imagens/carrossel2.png",
+        "imagens/carrossel3.png"
+    ];
+    let current = 0;
+    const img = document.getElementById("carousel-img");
+    document.getElementById("prev").onclick = function() {
+        current = (current - 1 + images.length) % images.length;
+        img.src = images[current];
+    };
+    document.getElementById("next").onclick = function() {
+        current = (current + 1) % images.length;
+        img.src = images[current];
+    };
+</script>
+</body>
+</html>

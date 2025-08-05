@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Espaço K</title>
+</head>
+<body>
+    
+    <div style="background-color: #d8f3ff;  border-radius: 6px;">
+        <img src="imagens/logo-png.png" alt="Logo do Espaço K" style="width: 200px; height: auto; display: block; margin: 0 auto;">
+    </div>
+
+    <nav>
+        <style>
+            nav {
+                background: #222;
+                padding: 0.8em 0;
+            }
+            .nav-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .nav-logo {
+                height: 48px;
+                width: auto;
+                margin-right: 1em;
+                order: 0;
+            }
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 1em;
+                order: 1;
+            }
+            nav li {
+                display: inline;
+            }
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: bold;
+                padding: 0.5em 1em;
+                border-radius: 4px;
+                transition: background 0.2s;
+            }
+            nav a:hover {
+                background: #d8f3ff;
+                color: black;
+            }
+        </style>
+        <div class="nav-container">
+            <img class="nav-logo" src="imagens/image-removebg-preview.png" alt="Logo Espaço K">
+            <ul>
+                <li><a href="index.html">Index</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="carousel" style="width: 100%; height: 300px; max-width:100vw; max-height:100vh; margin:0; position:relative; overflow:hidden;">
+
+        <img id="carousel-img" src="imagens/carrossel1.jpeg" alt="Foto Espaço K" style="width:100vw; height:100vh; object-fit:cover; display:block;">
+        <button id="prev" style="position:absolute; top:50%; left:16px; transform:translateY(-50%); background:#222; color:#fff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:24px;">&#10094;</button>
+        <button id="next" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); background:#222; color:#fff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:24px;">&#10095;</button>
+    </div>
+
+    <h1>Bem-vindo ao Espaço K</h1>
+    <p>Este é um espaço dedicado à criatividade e inovação.</p>
+    
+    
+<script>
+    const images = [
+        "imagens/carrossel1.jpeg",
+        "imagens/carrossel2.jpeg",
+        "imagens/carrossel3.jpeg"
+    ];
+    let current = 0;
+    const img = document.getElementById("carousel-img");
+    document.getElementById("prev").onclick = function() {
+        current = (current - 1 + images.length) % images.length;
+        img.src = images[current];
+    };
+    document.getElementById("next").onclick = function() {
+        current = (current + 1) % images.length;
+        img.src = images[current];
+    };
+</script>
+</body>
+</html>
