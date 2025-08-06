@@ -44,13 +44,28 @@
         <h1>Galeria</h1>
         <p>O Espaço K é um local dedicado à realização de eventos e celebrações. Com uma infraestrutura moderna e versátil, estamos prontos para atender às suas necessidades.</p>
         <div class="galeria-imagens">
-            <img src="imagens/galeria1.jpg" alt="Evento 1">
-            <img src="imagens/galeria2.jpg" alt="Evento 2">
-            <img src="imagens/galeria3.jpg" alt="Evento 3">
-            <img src="imagens/galeria4.jpg" alt="Evento 4">
-            <img src="imagens/galeria5.jpg" alt="Evento 5">
-            <img src="imagens/galeria6.jpg" alt="Evento 6">
+            <img src="imagens/galeria1.jpeg" alt="Evento 1" class="galeria-thumb">
+            <img src="imagens/galeria2.jpeg" alt="Evento 2" class="galeria-thumb">
+            <img src="imagens/galeria3.jpeg" alt="Evento 3" class="galeria-thumb">
+            <img src="imagens/galeria4.jpeg" alt="Evento 4" class="galeria-thumb">
+            <img src="imagens/galeria5.jpeg" alt="Evento 5" class="galeria-thumb">
         </div>
+        <style>
+        .galeria-imagens {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .galeria-thumb {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        </style>
     </main>
 
     <footer>
