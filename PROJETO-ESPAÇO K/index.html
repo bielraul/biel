@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço K</title>
+
     <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Convergence&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Convergence&display=swap" rel="stylesheet">
-
-    <title>Espaço K</title>
-
 </head>
+
 <body>
     <div class="logo-container">
         <a href="index.html">
@@ -21,17 +22,20 @@
     </div>
 
     <nav>
-        <div class="nav-container">
-            <img class="nav-logo" src="imagens/logotipo.png" alt="Logo Espaço K">
-            <ul>
-                <li><a href="index.html">Index</a></li>
-                <li><a href="sobre.html">Quem somos</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </div>
-    </nav>
+  <div class="nav-container">
+    <img src="imagens/logotipo.png" alt="Logo" class="nav-logo" />
+
+    <button class="hamburger" id="hamburger">&#9776;</button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
 
     <div id="carousel">
         <img id="carousel-img" src="imagens/carrossel1.jpeg" alt="Foto Espaço K">
@@ -41,30 +45,38 @@
 
     <h1>Bem-vindo ao Espaço K</h1>
     <p>Este é um espaço dedicado à criatividade e inovação.</p>
-    
-<script>
-    const images = [
-        "imagens/carrossel1.jpeg",
-        "imagens/carrossel2.jpeg",
-        "imagens/carrossel3.jpeg"
-    ];
-    let current = 0;
-    const img = document.getElementById("carousel-img");
-    document.getElementById("prev").onclick = function() {
-        current = (current - 1 + images.length) % images.length;
-        img.src = images[current];
-    };
-    document.getElementById("next").onclick = function() {
-        current = (current + 1) % images.length;
-        img.src = images[current];
-    };
-</script>
 
-<footer>
-    <div class="footer-container" style="background-color: #222; color: #fff; padding: 1px 0; text-align: center; margin-top: 40px;">
-        <p style="font-size: 1.1em; margin: 0;">&copy; 2024 Espaço K. Todos os direitos reservados.</p>
-        <p style="margin: 8px 0 0 0;">Contato: <a href="mailto:contato@espacok.com.br" style="color: #001aff; text-decoration: underline;">contato@espacok.com.br</a></p>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Espaço K. Todos os direitos reservados.</p>
+            <p>Contato: <a href="mailto:contato@espacok.com.br">contato@espacok.com.br</a></p>
+        </div>
+    </footer>
+
+    <script>
+
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.querySelector("nav ul");
+
+        hamburger.onclick = function () {
+            navLinks.classList.toggle("active");
+        };
+
+        const images = [
+            "imagens/carrossel1.jpeg",
+            "imagens/carrossel2.jpeg",
+            "imagens/carrossel3.jpeg"
+        ];
+        let current = 0;
+        const img = document.getElementById("carousel-img");
+        document.getElementById("prev").onclick = function () {
+            current = (current - 1 + images.length) % images.length;
+            img.src = images[current];
+        };
+        document.getElementById("next").onclick = function () {
+            current = (current + 1) % images.length;
+            img.src = images[current];
+        };
+    </script>
 </body>
 </html>

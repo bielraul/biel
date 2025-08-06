@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço K</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
 
-
-    <title>Espaço K</title>
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Convergence&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -29,40 +34,40 @@
         </div>
     </nav>
 
-    <div id="carousel" style="width: 100%; height: 300px; max-width:100vw; max-height:100vh; margin:0; position:relative; overflow:hidden;">
-
-        <img id="carousel-img" src="imagens/carrossel1.jpeg" alt="Foto Espaço K" style="width:100vw; height:100vh; object-fit:cover; display:block;">
-        <button id="prev" style="position:absolute; top:50%; left:16px; transform:translateY(-50%); background:#222; color:#fff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:24px;">&#10094;</button>
-        <button id="next" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); background:#222; color:#fff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:24px;">&#10095;</button>
+    <div id="carousel">
+        <img id="carousel-img" src="imagens/carrossel1.jpeg" alt="Foto Espaço K">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
     </div>
 
-    <h1>Sobre o Espaço K</h1>
-    <p>O Espaço K é um local dedicado à realização de eventos e celebrações. Com uma infraestrutura moderna e versátil, estamos prontos para atender às suas necessidades.</p>
+    <main class="content">
+        <h1>Sobre o Espaço K</h1>
+        <p>O Espaço K é um local dedicado à realização de eventos e celebrações. Com uma infraestrutura moderna e versátil, estamos prontos para atender às suas necessidades.</p>
+    </main>
 
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Espaço K. Todos os direitos reservados.</p>
+            <p>Contato: <a href="mailto:contato@espacok.com.br">contato@espacok.com.br</a></p>
+        </div>
+    </footer>
 
-<script>
-    const images = [
-        "imagens/carrossel1.jpeg",
-        "imagens/carrossel2.jpeg",
-        "imagens/carrossel3.jpeg"
-    ];
-    let current = 0;
-    const img = document.getElementById("carousel-img");
-    document.getElementById("prev").onclick = function() {
-        current = (current - 1 + images.length) % images.length;
-        img.src = images[current];
-    };
-    document.getElementById("next").onclick = function() {
-        current = (current + 1) % images.length;
-        img.src = images[current];
-    };
-</script>
-
-<footer>
-    <div class="footer-container" style="background-color: #222; color: #fff; padding: 1px 0; text-align: center; margin-top: 40px;">
-        <p style="font-size: 1.1em; margin: 0;">&copy; 2024 Espaço K. Todos os direitos reservados.</p>
-        <p style="margin: 8px 0 0 0;">Contato: <a href="mailto:contato@espacok.com.br" style="color: #66b5ff; text-decoration: underline;">contato@espacok.com.br</a></p>
-    </div>
-</footer>
+    <script>
+        const images = [
+            "imagens/carrossel1.jpeg",
+            "imagens/carrossel2.jpeg",
+            "imagens/carrossel3.jpeg"
+        ];
+        let current = 0;
+        const img = document.getElementById("carousel-img");
+        document.getElementById("prev").onclick = function () {
+            current = (current - 1 + images.length) % images.length;
+            img.src = images[current];
+        };
+        document.getElementById("next").onclick = function () {
+            current = (current + 1) % images.length;
+            img.src = images[current];
+        };
+    </script>
 </body>
 </html>

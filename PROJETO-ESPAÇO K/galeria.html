@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espaço K</title>
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Convergence&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <div class="logo-container">
         <a href="index.html">
             <img class="logo-img" src="imagens/logo-png.png" alt="Logo do Espaço K">
@@ -33,32 +40,42 @@
         <button id="next">&#10095;</button>
     </div>
 
-    <h1>Bem-vindo ao Espaço K</h1>
-    <p>Este é um espaço dedicado à criatividade e inovação.</p>
-    
-<script>
-    const images = [
-        "imagens/carrossel1.jpeg",
-        "imagens/carrossel2.jpeg",
-        "imagens/carrossel3.jpeg"
-    ];
-    let current = 0;
-    const img = document.getElementById("carousel-img");
-    document.getElementById("prev").onclick = function() {
-        current = (current - 1 + images.length) % images.length;
-        img.src = images[current];
-    };
-    document.getElementById("next").onclick = function() {
-        current = (current + 1) % images.length;
-        img.src = images[current];
-    };
-</script>
+    <main class="content">
+        <h1>Galeria</h1>
+        <p>O Espaço K é um local dedicado à realização de eventos e celebrações. Com uma infraestrutura moderna e versátil, estamos prontos para atender às suas necessidades.</p>
+        <div class="galeria-imagens">
+            <img src="imagens/galeria1.jpg" alt="Evento 1">
+            <img src="imagens/galeria2.jpg" alt="Evento 2">
+            <img src="imagens/galeria3.jpg" alt="Evento 3">
+            <img src="imagens/galeria4.jpg" alt="Evento 4">
+            <img src="imagens/galeria5.jpg" alt="Evento 5">
+            <img src="imagens/galeria6.jpg" alt="Evento 6">
+        </div>
+    </main>
 
-<footer>
-    <div class="footer-container" style="background-color: #222; color: #fff; padding: 1px 0; text-align: center; margin-top: 40px;">
-        <p style="font-size: 1.1em; margin: 0;">&copy; 2024 Espaço K. Todos os direitos reservados.</p>
-        <p style="margin: 8px 0 0 0;">Contato: <a href="mailto:contato@espacok.com.br" style="color: #001aff; text-decoration: underline;">contato@espacok.com.br</a></p>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Espaço K. Todos os direitos reservados.</p>
+            <p>Contato: <a href="mailto:contato@espacok.com.br">contato@espacok.com.br</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const images = [
+            "imagens/carrossel1.jpeg",
+            "imagens/carrossel2.jpeg",
+            "imagens/carrossel3.jpeg"
+        ];
+        let current = 0;
+        const img = document.getElementById("carousel-img");
+        document.getElementById("prev").onclick = function () {
+            current = (current - 1 + images.length) % images.length;
+            img.src = images[current];
+        };
+        document.getElementById("next").onclick = function () {
+            current = (current + 1) % images.length;
+            img.src = images[current];
+        };
+    </script>
 </body>
 </html>

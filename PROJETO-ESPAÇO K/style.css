@@ -1,4 +1,4 @@
-.convergence-regular {
+/*.convergence-regular {
   font-family: "Convergence", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -105,14 +105,122 @@ body {
         #next {
             right: 16px;
         }
+*/
 
-        /* style.css */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-color: #f7fafc;
+  font-family: "Convergence", sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #d8f3ff 100%);
 }
+
+.convergence-regular {
+  font-family: "Convergence", sans-serif;
+}
+
+.concert-one-regular {
+  font-family: "Concert One", sans-serif;
+}
+
+/* Logo */
+.logo-container {
+  background: linear-gradient(135deg, #ffffff 0%, #d8f3ff 100%);
+  border-radius: 6px;
+  padding: 1rem 0;
+}
+.logo-img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Navegação */
+nav {
+  background: #222;
+  padding: 0.8em 0;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+  font-size: 20px;
+}
+.nav-logo {
+  height: 95px;
+  width: auto;
+  margin-left: 2em;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+nav a:hover {
+  background: #d8f3ff;
+  color: black;
+}
+
+/* Carrossel */
+#carousel {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+#carousel-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 24px;
+}
+#prev {
+  left: 16px;
+}
+#next {
+  right: 16px;
+}
+
+/* Footer */
+.footer-container {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 40px;
+}
+.footer-container a {
+  color: #001aff;
+  text-decoration: underline;
+}
+
+/* Formulário */
 
 .container {
   padding-left: 1rem;
@@ -157,7 +265,7 @@ body {
 .form-group input,
 .form-group textarea {
   width: 93%;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   background-color: #e5e7eb;
   border: none;
   border-radius: 0.5rem;
@@ -184,4 +292,145 @@ button {
 
 button:hover {
   background-color: #8fddff;
+}
+
+/* Esconde botão em telas grandes */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Menu padrão (desktop) */
+.nav-links {
+  display: flex;
+  gap: 1em;
+}
+
+/* Responsividade */
+
+/* Telas até 900px */
+@media (max-width: 900px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 18px;
+  }
+
+  .nav-logo {
+    margin-left: 0;
+    margin-bottom: 1em;
+    height: 70px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+  }
+
+  .form-card {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .form-card h2 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+.hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #222;
+    padding: 1em 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 1em;
+    display: block;
+  }
+  
+}
+
+/* Telas até 600px */
+@media (max-width: 600px) {
+  .logo-img {
+    width: 70px;
+  }
+
+  #carousel {
+    max-height: 180px;
+  }
+
+  #carousel-img {
+    max-height: 180px;
+  }
+
+  .form-card {
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 1rem;
+    box-shadow: none; /* Remove sombra para visual mais leve em telas pequenas */
+  }
+
+  .form-card h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 93%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+/* Telas até 400px */
+@media (max-width: 400px) {
+  .nav-container {
+    font-size: 16px;
+    padding: 0 0.5em;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .form-card {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .form-card h2 {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
 }
