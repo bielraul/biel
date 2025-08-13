@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackBox Fashion - Loja de Roupas Premium</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>BlackBox Fashion</h1>
+                    <p>Estilo que conta sua história</p>
+                </div>
+                <div class="cart-icon" id="cartButton">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="products">
+            <h2>Nossos Produtos</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Produtos serão gerados via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Itens do carrinho serão adicionados aqui -->
+        </div>
+        <div class="cart-total">
+            Total: R$ <span id="cartTotal">0.00</span>
+        </div>
+        <a href="finalizar.html">
+            <button class="checkout-btn">Finalizar Compra</button>
+        </a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

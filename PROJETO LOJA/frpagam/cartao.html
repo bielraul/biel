@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pagamento</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .payment-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .payment-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .payment-header h2 {
+            color: #333;
+            margin: 0;
+        }
+        
+        .payment-header p {
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #4a89dc;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .card-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .card-icon {
+            width: 40px;
+            opacity: 0.3;
+        }
+        
+        .card-icon.active {
+            opacity: 1;
+        }
+        
+        .btn-submit {
+            background-color: #4a89dc;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #3a70c2;
+        }
+        
+        .card-preview {
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-preview::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .card-number {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .card-name, .card-expiry {
+            font-size: 14px;
+        }
+        
+        .field-icon {
+            position: absolute;
+            right: 15px;
+            top: 38px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-form">
+        <div class="payment-header">
+            <h2>Pagamento com Cartão</h2>
+            <p>Preencha os detalhes do seu cartão de crédito</p>
+        </div>
+        
+        <div class="card-preview">
+            <div class="card-number" id="card-number-preview">•••• •••• •••• ••••</div>
+            <div class="card-bottom">
+                <div class="card-name" id="card-name-preview">NOME NO CARTÃO</div>
+                <div class="card-expiry" id="card-expiry-preview">MM/AA</div>
+            </div>
+        </div>
+        
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="cardNumber">Número do Cartão</label>
+                <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+                <i class="fas fa-credit-card field-icon"></i>
+                <div class="card-icons">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9478d14c-dd73-4a0d-a288-09bc0b40cd40.png" alt="Visa logo" class="card-icon">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/85b2a0a5-d52f-4fbb-9d5c-6b3caf998079.png" alt="Mastercard logo" class="card-icon">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5500f360-fd64-4a99-b41d-962ba4e93df8.png" alt="American Express logo" class="card-icon">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="cardName">Nome no Cartão</label>
+                <input type="text" id="cardName" class="form-control" placeholder="Como escrito no cartão">
+                <i class="fas fa-user field-icon"></i>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cardExpiry">Validade</label>
+                    <input type="text" id="cardExpiry" class="form-control" placeholder="MM/AA" maxlength="5">
+                    <i class="fas fa-calendar-alt field-icon"></i>
+                </div>
+                <div class="form-group">
+                    <label for="cardCvv">CVV</label>
+                    <input type="text" id="cardCvv" class="form-control" placeholder="123" maxlength="4">
+                    <i class="fas fa-lock field-icon"></i>
+                </div>
+            </div>
+            <a href="../finalizar.html" style="text-decoration: none; color: inherit;">
+            <button type="submit" class="btn-submit">Confirmar Pagamento</button>
+        </form>
+    </div>
+
+    <script>
+        // Formatação do número do cartão
+        document.getElementById('cardNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let formattedValue = '';
+            
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formattedValue += ' ';
+                }
+                formattedValue += value[i];
+            }
+            
+            e.target.value = formattedValue;
+            document.getElementById('card-number-preview').textContent = formattedValue || '•••• •••• •••• ••••';
+        });
+        
+        // Atualização do nome no cartão
+        document.getElementById('cardName').addEventListener('input', function(e) {
+            document.getElementById('card-name-preview').textContent = e.target.value.toUpperCase() || 'NOME NO CARTÃO';
+        });
+        
+        // Formatação da data de validade
+        document.getElementById('cardExpiry').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\//g, '').replace(/[^0-9]/gi, '');
+            
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            
+            e.target.value = value;
+            document.getElementById('card-expiry-preview').textContent = value || 'MM/AA';
+        });
+        
+        // Validação do formulário
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validações básicas
+            const cardNumber = document.getElementById('cardNumber').value.replace(/\s+/g, '');
+            const cardName = document.getElementById('cardName').value;
+            const cardExpiry = document.getElementById('cardExpiry').value;
+            const cardCvv = document.getElementById('cardCvv').value;
+            
+            if (cardNumber.length < 16) {
+                alert('Por favor insira um número de cartão válido');
+                return;
+            }
+            
+            if (!cardName.trim()) {
+                alert('Por favor insira o nome no cartão');
+                return;
+            }
+            
+            if (!cardExpiry.includes('/') || cardExpiry.length !== 5) {
+                alert('Por favor insira uma data de validade no formato MM/AA');
+                return;
+            }
+            
+            if (cardCvv.length < 3) {
+                alert('Por favor insira um CVV válido');
+                return;
+            }
+            
+            alert('Pagamento processado com sucesso!');
+            // Aqui você pode adicionar a lógica para enviar os dados do pagamento para o servidor
+            // e.g., enviar via AJAX ou redirecionar para uma página de confirmação 
+            window.location.href = '../finalizar.html';
+        });
+    </script>
+</body>
+</html>
+

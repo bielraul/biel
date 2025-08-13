@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #000;
+    color: #ff0000;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background: #ff0000;
+}
+
+footer {
+    text-align: center;
+    padding: 18px 0;
+    background: #eee;
+    color: #555;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+</style>
+<body>
+    <header>
+        <h1>Finalizar Compra</h1>
+        <p>Complete seus dados para finalizar o pedido</p>
+
+        <a href="index.html" style="color: #fff; text-decoration: underline; font-size: 16px; position: absolute; left: 20px; top: 30px;">&#8592; Voltar</a>
+
+    </header>
+    <main>
+        <form>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="pagamento">Forma de Pagamento:</label>
+            <select id="pagamento" name="pagamento" required>
+                <option value="">Selecione</option>
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="boleto">Boleto Bancário</option>
+                <option value="pix">PIX</option>
+            </select>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Loja Exemplo</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Pedido finalizado com sucesso!');
+            window.location.href = 'index.html';
+        });
+
+        if (pagamento) {
+            pagamento.addEventListener('change', function() {
+                if (pagamento.value === 'cartao') {
+                    alert('Você escolheu pagar com Cartão de Crédito.');
+                    window.location.href = 'frpagam/cartao.html';
+                } else if (pagamento.value === 'boleto') {
+                    alert('Você escolheu pagar com Boleto Bancário.');
+                    window.location.href = 'frpagam/boleto.html';
+                } else if (pagamento.value === 'pix') {
+                    alert('Você escolheu pagar com PIX.');
+                    window.location.href = 'frpagam/pix.html';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
