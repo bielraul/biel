@@ -8,84 +8,65 @@
 </head>
 <style>
     body {
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    margin: 0;
-    padding: 0;
-}
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
 
-header {
-    background: #000;
-    color: #ff0000;
-    padding: 20px 0;
-    text-align: center;
-}
+    header {
+        background: #000;
+        color: #ff0000;
+        padding: 20px 0;
+        text-align: center;
+    }
 
-main {
-    max-width: 400px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+    main {
+        max-width: 400px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
 
-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #333;
-}
+    form label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #333;
+    }
 
-form input,
-form select {
-    width: 100%;
-    padding: 8px 10px;
-    margin-bottom: 18px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 15px;
-    box-sizing: border-box;
-}
+    form input,
+    form select {
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
 
-form button {
-    width: 100%;
-    background: #ff0000;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
-}
-
-form button:hover {
-    background: #ff0000;
-}
-
-footer {
-    text-align: center;
-    padding: 18px 0;
-    background: #eee;
-    color: #555;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
+    footer {
+        text-align: center;
+        padding: 18px 0;
+        background: #eee;
+        color: #555;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+    }
 </style>
 <body>
     <header>
         <h1>Finalizar Compra</h1>
         <p>Complete seus dados para finalizar o pedido</p>
-
         <a href="index.html" style="color: #fff; text-decoration: underline; font-size: 16px; position: absolute; left: 20px; top: 30px;">&#8592; Voltar</a>
-
     </header>
     <main>
-        <form>
+        <form id="checkoutForm">
             <label for="nome">Nome Completo:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -109,23 +90,39 @@ footer {
     </footer>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
+        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Pedido finalizado com sucesso!');
             window.location.href = 'index.html';
         });
 
+        const pagamento = document.getElementById('pagamento');
+
         if (pagamento) {
             pagamento.addEventListener('change', function() {
+                // Verifica se todas as informações necessárias estão preenchidas
+                const nome = document.getElementById('nome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const endereco = document.getElementById('endereco').value.trim();
+
                 if (pagamento.value === 'cartao') {
-                    alert('Você escolheu pagar com Cartão de Crédito.');
-                    window.location.href = 'frpagam/cartao.html';
+                    if (nome && email && endereco) {
+                        window.location.href = 'frpagam/cartao.html';
+                    } else {
+                        alert('Por favor, preencha todas as informações antes de prosseguir.');
+                    }
                 } else if (pagamento.value === 'boleto') {
-                    alert('Você escolheu pagar com Boleto Bancário.');
-                    window.location.href = 'frpagam/boleto.html';
+                    if (nome && email && endereco) {
+                        window.location.href = 'frpagam/boleto.html';
+                    } else {
+                        alert('Por favor, preencha todas as informações antes de prosseguir.');
+                    }
                 } else if (pagamento.value === 'pix') {
-                    alert('Você escolheu pagar com PIX.');
-                    window.location.href = 'frpagam/pix.html';
+                    if (nome && email && endereco) {
+                        window.location.href = 'frpagam/pix.html';
+                    } else {
+                        alert('Por favor, preencha todas as informações antes de prosseguir.');
+                    }
                 }
             });
         }

@@ -22,7 +22,7 @@
         }
         
         .payment-form {
-            background-color: white;
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             padding: 30px;
@@ -36,12 +36,12 @@
         }
         
         .payment-header h2 {
-            color: #333;
+            color: #ff0000; /* Vermelho */
             margin: 0;
         }
         
         .payment-header p {
-            color: #777;
+            color: #555;
             margin-top: 5px;
         }
         
@@ -53,7 +53,7 @@
         .form-group label {
             display: block;
             margin-bottom: 5px;
-            color: #555;
+            color: #333;
             font-size: 14px;
         }
         
@@ -68,7 +68,7 @@
         
         .form-control:focus {
             outline: none;
-            border-color: #4a89dc;
+            border-color: #ff0000; /* Vermelho */
         }
         
         .form-row {
@@ -96,7 +96,7 @@
         }
         
         .btn-submit {
-            background-color: #4a89dc;
+            background-color: #ff0000; /* Vermelho */
             color: white;
             border: none;
             padding: 12px;
@@ -108,12 +108,31 @@
         }
         
         .btn-submit:hover {
-            background-color: #3a70c2;
+            background-color: #d32f2f; /* Vermelho mais escuro */
         }
         
+        .btn-cancel {
+            margin-top: 10px;
+            margin-left: 35%;
+            background-color: #000000; /* Vermelho */
+            color: white;
+            border: none;
+            padding: 8px;
+            width: 30%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cancel:hover {
+            background-color: #ff0000; /* Vermelho mais escuro */
+            color: #000000;
+        }
+
         .card-preview {
             height: 180px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #000 0%, #ff0000 100%); /* Preto e vermelho */
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 30px;
@@ -203,8 +222,8 @@
                     <i class="fas fa-lock field-icon"></i>
                 </div>
             </div>
-            <a href="../finalizar.html" style="text-decoration: none; color: inherit;">
             <button type="submit" class="btn-submit">Confirmar Pagamento</button>
+            <button type="button" class="btn-cancel" onclick="window.location.href='../finalizar.html'">Voltar</button>
         </form>
     </div>
 
@@ -275,9 +294,8 @@
             alert('Pagamento processado com sucesso!');
             // Aqui você pode adicionar a lógica para enviar os dados do pagamento para o servidor
             // e.g., enviar via AJAX ou redirecionar para uma página de confirmação 
-            window.location.href = '../finalizar.html';
+            window.location.href = '../agradecimento.html';
         });
     </script>
 </body>
 </html>
-
